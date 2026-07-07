@@ -1,0 +1,237 @@
+/* === Base & Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9fafb;
+  color: #1f2937;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Header & Navigation === */
+header {
+  background: #111827;
+  padding: 1.2rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fbbf24;  /* golden accent */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.logo:hover {
+  color: #f59e0b;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #fbbf24;
+}
+/* Underline animation on hover */
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fbbf24;
+  transition: width 0.3s ease;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+/* === Main content === */
+main {
+  flex: 1;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+/* === Animations === */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+.delay-1 {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Hero / Welcome text === */
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* === About section with image box === */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.image-box {
+  border: 3px solid #d1d5db;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: fit-content;
+}
+.image-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+.image-box img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.bio {
+  text-align: center;
+}
+.bio p {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.name {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #1f2937;
+}
+.profession {
+  color: #4b5563;
+}
+.future {
+  font-style: italic;
+  color: #6b7280;
+  font-weight: 300;
+}
+
+/* === Contact page === */
+.contact-section {
+  text-align: center;
+}
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: white;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #fbbf24;
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.3);
+}
+
+.btn {
+  background: #111827;
+  color: #fbbf24;
+  border: none;
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  align-self: center;
+}
+.btn:hover {
+  background: #374151;
+  transform: translateY(-2px);
+}
+
+/* === Footer === */
+footer {
+  background: #111827;
+  color: #9ca3af;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+  font-size: 0.95rem;
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  nav ul {
+    gap: 1rem;
+  }
+}
